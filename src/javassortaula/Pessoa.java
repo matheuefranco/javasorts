@@ -3,7 +3,7 @@ package javassortaula;
 
 import java.time.LocalDate;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa> {
     private String nome;
     private LocalDate dataNascimento;
     
@@ -32,6 +32,15 @@ public class Pessoa {
     public String toString(){
         return this.nome + " :" 
                 + this.dataNascimento;
+    }
+    
+    @Override
+    public int compareTo(Pessoa outraPessoa){
+        int comparaNome = this.nome.compareTo(outraPessoa.getNome());
+        if(comparaNome==0)// nomes iguais
+            return this.dataNascimento.compareTo(outraPessoa.getDataNascimento());
+        
+        return comparaNome;
     }
     
 }
