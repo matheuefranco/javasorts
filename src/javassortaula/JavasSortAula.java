@@ -2,8 +2,10 @@
 package javassortaula;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
+import java.util.Scanner;
 
 public class JavasSortAula {
     
@@ -27,7 +29,7 @@ public class JavasSortAula {
     }
 
     public static void main(String[] args) {
-        Pessoa[] vetorPessoas = geraArrayPessoas();
+      /* Pessoa[] vetorPessoas = geraArrayPessoas();
         System.out.println("Pessoas do vetor:");
         for(Pessoa p: vetorPessoas)
             System.out.println(p);
@@ -42,22 +44,32 @@ public class JavasSortAula {
         SelectionSort<Pessoa> ssort = new SelectionSort<>();
         InsertionSort<Pessoa> isort = new InsertionSort<>();
         //bsort.sort(vetorPessoas, comparaDataNascimento);
-        isort.sort(vetorPessoas,comparaDataNascimento);
+        isort.sort(vetorPessoas,comparaNome);
+        //Arrays.sort(vetorPessoas,comparaNome);
         System.out.println("Pessoas ordenadas pelo nome:");
         for(Pessoa p: vetorPessoas)
             System.out.println(p);
-       
-       /*int tamanho = 50000, min = 1, max =100;
+     */
+       int tamanho = 100, min = 1, max =20;
        Integer[] vetor1 = geraArrayAleatorio(tamanho,min,max);
        Integer[] vetor2 = new Integer[tamanho];
        Integer[] vetor3 = new Integer[tamanho];
-       
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Valor para busca:");
+        Integer x = scanner.nextInt();
+        Search busca = new Search();
+        System.out.println("Busca Linear");
+        System.out.println("Posicao:"+busca.linearSearch(vetor1, x));
+        System.out.println("Comparacoes:"+busca.getContaComparacoes());
+        
+
        for(int i=0;i<tamanho;i++){
            vetor2[i]=vetor1[i];
            vetor3[i] = vetor1[i];
+           System.out.print("|"+vetor1[i]);
        }// copia do vetor 1 para os outros 2
-       
-      /* Comparator<Integer> comparatorInteiro = (a,b)-> a.compareTo(b);
+        System.out.println("");
+       Comparator<Integer> comparatorInteiro = (a,b)-> a.compareTo(b);
        
        BubbleSort<Integer> bsort = new BubbleSort<>();
        SelectionSort<Integer> ssort = new SelectionSort<>();
@@ -67,21 +79,28 @@ public class JavasSortAula {
        bsort.sort(vetor1, comparatorInteiro);
        long tfinal = System.currentTimeMillis();
        long tempo = tfinal - inicio;
-        System.out.println("Tempo do Bubble Sort:"+tempo);
+        System.out.println("Tempo do Bubble Sort:"+tempo + " Comparacoes:"+ bsort.getContaComparacoes());
        
         // Selection Sort
        inicio = System.currentTimeMillis();
        ssort.sort(vetor2, comparatorInteiro);
        tfinal = System.currentTimeMillis();
        tempo = tfinal - inicio;
-       System.out.println("Tempo do Selection Sort:"+tempo);
+       System.out.println("Tempo do Selection Sort:"+tempo + " Comparacoes:"+ssort.getContaComparacoes());
        
        // Insertion Sort
        inicio = System.currentTimeMillis();
-       isort.sort(vetor3, comparatorInteiro);
+       isort.sort(vetor3);
        tfinal = System.currentTimeMillis();
        tempo = tfinal - inicio;
-       System.out.println("Tempo do Insertion Sort:"+tempo);*/
+       System.out.println("Tempo do Insertion Sort:"+tempo+ " Comparacoes:"+ isort.getContaCompacaoes());
+       //System.out.println("Vetor ordenado:");
+
+        System.out.println("Busca Binaria");
+        System.out.println("Posicao:"+busca.binarySearch(vetor1, x));
+        System.out.println("Comparacoes:"+busca.getContaComparacoes());
+       
+
     }
     
 }
