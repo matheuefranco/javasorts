@@ -29,7 +29,7 @@ public class JavasSortAula {
     }
 
     public static void main(String[] args) {
-      /* Pessoa[] vetorPessoas = geraArrayPessoas();
+       Pessoa[] vetorPessoas = geraArrayPessoas();
         System.out.println("Pessoas do vetor:");
         for(Pessoa p: vetorPessoas)
             System.out.println(p);
@@ -44,13 +44,16 @@ public class JavasSortAula {
         SelectionSort<Pessoa> ssort = new SelectionSort<>();
         InsertionSort<Pessoa> isort = new InsertionSort<>();
         //bsort.sort(vetorPessoas, comparaDataNascimento);
-        isort.sort(vetorPessoas,comparaNome);
+        isort.sort(vetorPessoas);
         //Arrays.sort(vetorPessoas,comparaNome);
         System.out.println("Pessoas ordenadas pelo nome:");
         for(Pessoa p: vetorPessoas)
             System.out.println(p);
-     */
-       int tamanho = 100, min = 1, max =20;
+     // crie um objeto pessoa
+     // chame a busca binária
+     
+     
+     /*  int tamanho = 100, min = 1, max =20;
        Integer[] vetor1 = geraArrayAleatorio(tamanho,min,max);
        Integer[] vetor2 = new Integer[tamanho];
        Integer[] vetor3 = new Integer[tamanho];
@@ -100,7 +103,7 @@ public class JavasSortAula {
         System.out.println("Posicao:"+busca.binarySearch(vetor1, x));
         System.out.println("Comparacoes:"+busca.getContaComparacoes());
        
-
+*/
     }
     
 }
