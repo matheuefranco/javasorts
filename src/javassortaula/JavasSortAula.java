@@ -4,6 +4,7 @@ package javassortaula;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -40,8 +41,8 @@ public class JavasSortAula {
         Comparator<Pessoa> comparaDataNascimento = (p1,p2) ->
                 p1.getDataNascimento().compareTo(p2.getDataNascimento());
         
-        BubbleSort<Pessoa> bsort = new BubbleSort<>();
-        SelectionSort<Pessoa> ssort = new SelectionSort<>();
+        //BubbleSort<Pessoa> bsort = new BubbleSort<>();
+        //SelectionSort<Pessoa> ssort = new SelectionSort<>();
         InsertionSort<Pessoa> isort = new InsertionSort<>();
         //bsort.sort(vetorPessoas, comparaDataNascimento);
         isort.sort(vetorPessoas);
@@ -49,6 +50,11 @@ public class JavasSortAula {
         System.out.println("Pessoas ordenadas pelo nome:");
         for(Pessoa p: vetorPessoas)
             System.out.println(p);
+        
+        Pessoa pessoaBusca = new Pessoa("Carlos", LocalDate.of(1990, 5, 20));
+
+
+        
      // crie um objeto pessoa
      // chame a busca binária
      
